@@ -193,7 +193,7 @@ Based on the latest execution with NYC taxi data (10 trips analyzed):
 - **Business Hours**: Consistent activity from 7 AM to 5 PM
 - **Rush Hour Pattern**: Evening peak shows 2x demand increase
 
-<img src="results/temporal_analysis.png" alt="Temporal Analysis" width="750">
+<img src="docs/images/temporal_analysis.png" alt="Temporal Analysis" width="750">
 
 *Hourly trip distribution analysis revealing demand patterns throughout the day. The visualization shows clear peak activity at 5 PM (17:00) with consistent business hour activity from 7 AM to 5 PM, providing insights for capacity planning and resource allocation optimization.*
 
@@ -206,7 +206,7 @@ Based on the latest execution with NYC taxi data (10 trips analyzed):
 | Average Speed | 10.07 mph |
 | Fare per Mile | $4.72 |
 
-![Statistical Overview](results/statistical_overview.png)
+![Statistical Overview](docs/images/statistical_overview.png)
 
 *Comprehensive statistical analysis showing trip metrics distribution, speed patterns, distance-fare relationship, and business hours breakdown. The visualization highlights the strong linear correlation between distance and fare (R² = 0.982), speed distribution patterns reflecting NYC traffic conditions, and the dominance of business hours in trip activity.*
 
@@ -217,7 +217,7 @@ Based on the latest execution with NYC taxi data (10 trips analyzed):
 | Distance ↔ Duration | 0.120 | **WEAK** - Traffic variability affects duration |
 | Duration ↔ Fare | 0.225 | **WEAK** - Time has minimal pricing impact |
 
-<img src="results/correlation_analysis.png" alt="Correlation Analysis" width="800">
+<img src="docs/images/correlation_analysis.png" alt="Correlation Analysis" width="800">
 
 *Correlation matrix heatmap and strength analysis revealing the relationships between trip metrics. The visualization clearly demonstrates the exceptionally strong distance-fare correlation (0.982) that validates the current pricing model, while highlighting weak correlations with duration that indicate traffic unpredictability challenges.*
 
@@ -233,7 +233,7 @@ Based on the latest execution with NYC taxi data (10 trips analyzed):
 - **Operational Challenge**: Low distance-duration correlation (12%) indicates traffic unpredictability
 - **Revenue Consistency**: $4.72/mile average with predictable patterns
 
-<img src="results/kpi_dashboard.png" alt="KPI Dashboard" width="850">
+<img src="docs/images/kpi_dashboard.png" alt="KPI Dashboard" width="850">
 
 *Key Performance Indicators dashboard providing a comprehensive overview of service metrics, operational efficiency, and revenue performance. The visualization includes service quality metrics, efficiency indicators, revenue analysis, and performance benchmarks that enable data-driven decision making and strategic planning.*
 
@@ -243,7 +243,7 @@ Based on the latest execution with NYC taxi data (10 trips analyzed):
 3. **Optimize peak hour capacity** (leverage 5 PM demand spike)
 4. **Consider dynamic pricing** during high-demand periods
 
-<img src="results/business_recommendations.png" alt="Business Recommendations" width="900">
+<img src="docs/images/business_recommendations.png" alt="Business Recommendations" width="900">
 
 *Comprehensive business strategy visualization showing pricing optimization opportunities, operational improvement targets, market opportunity matrix, and investment priority rankings. The charts provide actionable insights for revenue enhancement, operational efficiency, and strategic decision-making based on data-driven analysis.*
 
