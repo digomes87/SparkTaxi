@@ -115,8 +115,8 @@ class TripDurationPredictor:
                 dropoff_lat,
                 random.choice(["N", "Y"]),
                 int(base_duration),
-                __builtins__['round'](distance, 2),
-                __builtins__['round'](distance * 2.5 + random.uniform(2, 10), 2)  # Base fare calculation
+                round(distance, 2),
+                round(distance * 2.5 + random.uniform(2, 10), 2)  # Base fare calculation
             ))
         
         self.df = self.spark.createDataFrame(sample_data, schema)

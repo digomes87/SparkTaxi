@@ -1,0 +1,159 @@
+=================================================================
+                    NYC TAXI DATA ANALYSIS RESULTS
+                     Apache Spark Implementation
+=================================================================
+
+📊 ANALYSIS OVERVIEW
+===================
+This document contains the comprehensive results from the NYC Taxi Data Analysis
+performed using Apache Spark. The analysis includes temporal patterns, distance-
+duration relationships, and statistical insights.
+
+🕐 TEMPORAL ANALYSIS RESULTS
+============================
+
+Hourly Trip Distribution:
+------------------------
+Hour | Trip Count
+-----|----------
+  7  |    1
+  8  |    1
+  9  |    1
+ 10  |    1
+ 12  |    1
+ 13  |    1
+ 14  |    1
+ 15  |    1
+ 16  |    1
+ 17  |    2
+
+Key Findings:
+- Peak hour identified at 17:00 (5 PM) with 2 trips
+- Consistent activity throughout business hours (7 AM - 5 PM)
+- Evening rush hour shows increased demand
+
+📏 DISTANCE-DURATION-FARE ANALYSIS
+==================================
+
+1. BASIC STATISTICS
+------------------
+Metric          | Trip Distance | Trip Duration | Fare Amount
+----------------|---------------|---------------|-------------
+Count           |      10       |      10       |     10
+Mean            |     3.19      |    1170.0     |   15.05
+Std Deviation   |     0.74      |    221.36     |    2.71
+Minimum         |     1.8       |     900       |   11.0
+Maximum         |     4.2       |    1500       |   19.5
+
+Key Insights:
+- Average trip distance: 3.19 miles
+- Average trip duration: 19.5 minutes (1170 seconds)
+- Average fare: $15.05
+- Trip duration varies significantly (15-25 minutes range)
+
+2. SPEED ANALYSIS
+----------------
+Metric          | Speed (mph)
+----------------|-------------
+Count           |     10
+Mean            |   10.07
+Std Deviation   |    2.42
+Minimum         |    4.32
+Maximum         |   12.8
+
+Key Insights:
+- Average speed: 10.07 mph (typical for NYC traffic)
+- Speed variation indicates different traffic conditions
+- Minimum speed (4.32 mph) suggests heavy traffic periods
+- Maximum speed (12.8 mph) indicates lighter traffic conditions
+
+3. CORRELATION ANALYSIS
+======================
+Correlation Matrix Results:
+
+                | Trip Distance | Trip Duration | Fare Amount
+----------------|---------------|---------------|-------------
+Trip Distance   |     1.000     |     0.120     |    0.982
+Trip Duration   |     0.120     |     1.000     |    0.225
+Fare Amount     |     0.982     |     0.225     |    1.000
+
+Critical Findings:
+- STRONG correlation (0.982) between trip distance and fare amount
+- WEAK correlation (0.120) between trip distance and duration
+- WEAK correlation (0.225) between trip duration and fare amount
+
+📈 BUSINESS INSIGHTS
+===================
+
+1. PRICING STRATEGY
+------------------
+- Distance is the PRIMARY factor in fare calculation (98.2% correlation)
+- Time-based pricing has minimal impact on total fare
+- Consistent pricing model across different trip lengths
+
+2. OPERATIONAL EFFICIENCY
+------------------------
+- Low distance-duration correlation suggests traffic variability
+- Average speed of 10 mph aligns with NYC urban conditions
+- Duration prediction requires traffic pattern consideration
+
+3. DEMAND PATTERNS
+-----------------
+- Evening rush hour (5 PM) shows peak demand
+- Consistent demand throughout business hours
+- Opportunity for dynamic pricing during peak hours
+
+🎯 KEY PERFORMANCE INDICATORS
+=============================
+
+Service Metrics:
+- Average Trip Distance: 3.19 miles
+- Average Trip Duration: 19.5 minutes
+- Average Speed: 10.07 mph
+- Average Fare: $15.05
+- Fare per Mile: $4.72
+
+Efficiency Metrics:
+- Distance-Fare Correlation: 98.2% (Excellent)
+- Speed Consistency: 76% (Good - considering traffic)
+- Duration Predictability: Low (due to traffic variability)
+
+🔍 RECOMMENDATIONS
+==================
+
+1. PRICING OPTIMIZATION
+----------------------
+- Maintain distance-based pricing model (highly effective)
+- Consider traffic-adjusted time surcharges for peak hours
+- Implement dynamic pricing during high-demand periods
+
+2. OPERATIONAL IMPROVEMENTS
+--------------------------
+- Focus on route optimization to improve average speed
+- Develop traffic-aware duration prediction models
+- Monitor peak hour capacity to meet demand
+
+3. DATA COLLECTION ENHANCEMENT
+-----------------------------
+- Collect real-time traffic data for better duration prediction
+- Track weather conditions impact on trip patterns
+- Implement customer satisfaction metrics
+
+📋 TECHNICAL SUMMARY
+===================
+
+Data Processing:
+- Framework: Apache Spark
+- Data Points Analyzed: 10 taxi trips
+- Analysis Types: Temporal, Statistical, Correlation
+- Output Format: CSV files and statistical summaries
+
+Files Generated:
+- hourly_trips.csv: Temporal distribution data
+- daily_trips.csv: Daily aggregation data
+- distance_duration_analysis.csv: Correlation analysis
+
+=================================================================
+                        END OF ANALYSIS
+                    Generated by Spark Analytics
+=================================================================
