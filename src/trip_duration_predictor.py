@@ -347,8 +347,8 @@ class TripDurationPredictor:
         # Get best parameters
         best_rf_model = best_model.stages[-1]
         print(f"Best parameters:")
-        print(f"  Number of trees: {best_rf_model.getNumTrees()}")
-        print(f"  Max depth: {best_rf_model.getMaxDepth()}")
+        print(f"  Number of trees: {best_rf_model.getNumTrees}")
+        print(f"  Max depth: {best_rf_model.getOrDefault('maxDepth')}")
         
         self.model = best_model
         return best_model
@@ -376,10 +376,16 @@ class TripDurationPredictor:
         importances = rf_model.featureImportances.toArray()
         
         # Create feature importance DataFrame
-        feature_importance_data = list(zip(self.feature_cols, importances))
+        feature_importance_data = [(str(feature), float(importance)) 
+                                 for feature, importance in zip(self.feature_cols, importances)]
+        
+        schema = StructType([
+            StructField("feature", StringType(), True),
+            StructField("importance", DoubleType(), True)
+        ])
+        
         feature_importance_df = self.spark.createDataFrame(
-            feature_importance_data,
-            ["feature", "importance"]
+            feature_importance_data, schema
         ).orderBy(desc("importance"))
         
         print("Feature Importance Ranking:")

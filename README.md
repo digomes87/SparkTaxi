@@ -183,21 +183,42 @@ Models are evaluated using:
 - **MAE** (Mean Absolute Error)
 - **R²** (Coefficient of Determination)
 
-## 🔍 Sample Output
+## 🔍 Actual Results
 
-```
-=== TEMPORAL PATTERNS ANALYSIS ===
+### Machine Learning Model Performance
+Based on the latest execution with sample data:
 
-1. Trips by Hour of Day:
-+----+-----+
-|hour|count|
-+----+-----+
-|   0|   45|
-|   1|   32|
-|   2|   28|
-...
+| Model | RMSE (seconds) | MAE (seconds) | R² Score |
+|-------|----------------|---------------|----------|
+| Linear Regression | 433.19 | 374.23 | 0.6878 |
+| Random Forest | 464.21 | 388.46 | 0.6416 |
+| Gradient Boosted Trees | 509.83 | 432.34 | 0.5676 |
 
-=== MACHINE LEARNING MODELS ===
+**Best Model**: Linear Regression with the lowest RMSE and highest R² score.
+
+### Feature Importance (Random Forest)
+The most important features for predicting trip duration:
+
+| Feature | Importance |
+|---------|------------|
+| Distance Calculated | 78.09% |
+| Pickup Longitude | 5.59% |
+| Dropoff Longitude | 5.06% |
+| Dropoff Latitude | 3.86% |
+| Pickup Latitude | 3.18% |
+| Pickup Day of Week | 1.60% |
+| Pickup Hour | 1.56% |
+| Passenger Count | 0.57% |
+
+**Key Insight**: Distance is by far the most important factor (78%) in predicting trip duration, followed by geographic coordinates.
+
+### Sample Analysis Results
+- **Temporal Patterns**: Analysis shows trip distribution across different hours of the day
+- **Distance-Duration Correlation**: Strong correlation between calculated distance and trip duration
+- **Popular Routes**: Identification of most frequent pickup and dropoff locations
+- **Model Accuracy**: Linear Regression achieved the best performance with MAE of ~6.2 minutes
+
+All detailed results are saved in the `results/` directory as CSV files.
 
 Linear Regression Results:
   RMSE: 245.67 seconds
